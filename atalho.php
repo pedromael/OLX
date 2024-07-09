@@ -12,4 +12,19 @@ function autoloader($class) {
     }
 }
 spl_autoload_register('autoloader');
+function sair($para = NULL) {
+    if($para == 'login')
+    {
+        if (file_exists(__DIR__."/entrar/index.php")) {
+            echo "saiu";//header("location: ". __DIR__."/entrar/index.php");
+        }else {
+            if (file_exists(__DIR__."/entrar/index.php")) {
+                //header("location: ".__DIR__."/entrar/index.php");
+            }
+        }
+        return true;
+    }
+    return false;
+}
+$usuario = new usuario;
 ?>

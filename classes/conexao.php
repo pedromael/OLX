@@ -3,7 +3,7 @@ class conexao
 {
     public $pdo;
     public $erro;
-    private $bdnome = "OLX_stress";
+    private $bdnome = "olx";
     private $bdhost = "localhost";
     private $bdpass = "";
     private $bduser = "root";

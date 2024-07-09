@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+
 <html lang="pt" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Animated Login Form with Glowing Input</title>
+  <title>OLX</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
   <link rel="stylesheet" href="../stilo/css.css">
   <link rel="stylesheet" href="../stilo/login.css">
@@ -14,14 +14,27 @@
   <div class="text">
     SIG-in
   </div>
-  <form>
+  <form method="POST">
     <div class="field">
       <div class="fas fa-envelope"></div>
-      <input name="email" type="text" placeholder="Email or Phone">
+      <input name="email" type="text" placeholder="Email">
     </div>
     <div class="field">
       <div class="fas fa-envelope"></div>
-      <input name="country" type="text" placeholder="Country">
+      <input name="nome" type="text" placeholder="nome completo">
+    </div>
+    <p>data de nasciemnto</p>
+    <div class="field">
+      <div class="fas fa-envelope"></div>
+      <input type="date" name="data_nascimento" id="">
+    </div>
+    <div class="field">
+      <div class="fas fa-envelope"></div>
+      <input name="indereco" type="text" placeholder="indereco">
+    </div>
+    <div class="field">
+      <div class="fas fa-envelope"></div>
+      <input name="pais" type="text" placeholder="Pais">
     </div>
     <div class="field">
       <div class="fas fa-lock"></div>

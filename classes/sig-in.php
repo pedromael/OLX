@@ -48,13 +48,14 @@ class sig_in extends conexao{
         $sqll->bindValue(":e", $email);
         $sqll->execute();
         if ($sqll->rowCount() <= 0) {
-            $sql = $this->pdo->prepare("INSERT INTO usuarios(nome,email,id_pais,senha,code_nome,data) 
-            VALUES (:n,:e,:p,:s,:c,now())");
+            $sql = $this->pdo->prepare("INSERT INTO usuarios(nome,email,id_pais,indereco,username,data_nascimento,data_registro) 
+            VALUES (:n,:e,:p,:i,:u,:d,now())");
             $sql->bindValue(":n", $nome);
-            $sql->bindValue(":s", md5($senha));
+            $sql->bindValue(":i", $indereco);
             $sql->bindValue(":e", $email);
             $sql->bindValue(":p", $pais);
-            $sql->bindValue(":c", $code_nome);
+            $sql->bindValue(":d", $data_nascimento);
+            $sql->bindValue(":u", $code_nome);
             if ($sql->execute()) {
                 $sql = $this->pdo->prepare("SELECT * FROM usuarios WHERE email =:e AND senha=:s");
                 $sql->bindValue(":s", md5($senha));
