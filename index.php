@@ -3,6 +3,8 @@
     if (!isset($_SESSION['user'])) {
         sair('login');
     }
+    $bup = new backup;
+    $bup->realizar();
 ?>
 <html lang="pt">
 <head>

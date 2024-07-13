@@ -3,10 +3,10 @@ class conexao
 {
     public $pdo;
     public $erro;
-    private $bdnome = "olx";
-    private $bdhost = "localhost";
-    private $bdpass = "";
-    private $bduser = "root";
+    public $bdnome = "olx";
+    public $bdhost = "localhost";
+    public $bdpass = "";
+    public $bduser = "root";
 
     public function __construct()
     {
