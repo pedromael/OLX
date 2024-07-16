@@ -58,7 +58,7 @@ CREATE TABLE `produtos` (
   `id_user` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `nome` varchar(75) NOT NULL,
-  `id_registro` datetime NOT NULL
+  `data_registro` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
