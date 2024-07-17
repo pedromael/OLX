@@ -18,7 +18,7 @@ function sair($para = NULL) {
         if (file_exists(__DIR__."/entrar/index.php")) {
             echo "saiu";//header("location: ". __DIR__."/entrar/index.php");
         }else {
-            if (file_exists(__DIR__."/entrar/index.php")) {
+            if (file_exists(__DIR__."../entrar/index.php")) {
                 //header("location: ".__DIR__."/entrar/index.php");
             }
         }
