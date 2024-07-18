@@ -21,7 +21,7 @@ class sig_in extends conexao{
         }
         return false;
     }
-    public function logar($email,$senha)
+    public function logar($dados)
     {
         $sql = $this->pdo->prepare("SELECT * FROM usuarios WHERE email =:e AND senha =:s");
         $sql->bindValue(":s", md5($senha));
@@ -34,7 +34,8 @@ class sig_in extends conexao{
             if ($this->registrar_login()) {
                 return true;
             }else {
-                ?><script>alert("erro ao iniciar login")</script><?php
+            $_SESSION['id_user'] = NULL;
+            return false;
             }
         } else {
             return false;
@@ -42,18 +43,18 @@ class sig_in extends conexao{
     }
     public function cadastrar($nome,$email,$pais,$senha)
     {
+        require "../gerador_username.php";
         $code_nome = gerar_code_nome($nome);
 
         $sqll = $this->pdo->prepare("SELECT * FROM usuarios WHERE email =:e");
         $sqll->bindValue(":e", $email);
         $sqll->execute();
         if ($sqll->rowCount() <= 0) {
-            $sql = $this->pdo->prepare("INSERT INTO usuarios(nome,email,id_pais,indereco,username,data_nascimento,data_registro) 
-            VALUES (:n,:e,:p,:i,:u,:d,now())");
+            $sql = $this->pdo->prepare("INSERT INTO usuarios(nome,email,indereco,username,data_nascimento,data_registro) 
+            VALUES (:n,:e,:i,:u,:d,now())");
             $sql->bindValue(":n", $nome);
             $sql->bindValue(":i", $indereco);
             $sql->bindValue(":e", $email);
-            $sql->bindValue(":p", $pais);
             $sql->bindValue(":d", $data_nascimento);
             $sql->bindValue(":u", $code_nome);
             if ($sql->execute()) {

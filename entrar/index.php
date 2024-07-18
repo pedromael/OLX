@@ -1,4 +1,67 @@
 <!DOCTYPE html>
+<?php
+	require "../atalho.php";
+	$entrar = new sig_in;
+	if (isset($_POST['username'])) {
+		if (!empty($_POST['username']) && !empty($_POST['senha'])) {
+			foreach ($_POST as $key => $value) {
+				$dados[$key] = $value;
+			}
+			if ($entrar->logar($dados)) {
+				?>
+				<script>
+					window.location.href = "../";
+				</script>
+				<?php
+			}else{
+				?>
+				<script>
+					alert("senha ou username errado");
+				</script>
+				<?php
+			}
+		}else{
+			?>
+				<script>
+					alert("preencha todas as abas");
+				</script>
+				<?php
+		}
+	}elseif(isset($_POST['nome'])){
+		if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['senha_conf']) && !empty($_POST['telefone']) && !empty($_POST['indereco']) && !empty($_POST['data_nasciemnto'])) {
+			foreach ($_POST as $key => $value) {
+				$dados[$key] = $value;
+			}
+			if ($dados['senha'] == $dados['senha_conf']) {
+				if ($entrar->cadastrar($dados)) {
+					?>
+					<script>
+						window.location.href = "../";
+					</script>
+					<?php
+				}else{
+					?>
+					<script>
+						alert("falha ao cadastrar conta tente novamente se o problema persistir, deixe uma mensagem");
+					</script>
+					<?php
+				}
+			}else{
+				?>
+				<script>
+					alert("senha e confirmar senha nao correspondem");
+				</script>
+				<?php
+			}
+		}else{
+			?>
+			<script>
+				alert("preencha todas as abas");
+			</script>
+			<?php
+		}
+	}
+?>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />

@@ -1,7 +1,7 @@
 <?php
     include "atalho.php";
     if (!isset($_SESSION['user'])) {
-        sair('login');
+        header("location: entrar/");//sair('login');
     }
     $bup = new backup;
     $bup->realizar();

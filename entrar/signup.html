@@ -1,36 +1,36 @@
-<form action="#" class="sign-up-form">
+<form action="#" class="sign-up-form" method="POST">
     <h2 class="title">Cadastro</h2>
     <div class="input-field">
         <i class="fas fa-user"></i>
-        <input type="text" placeholder="Nome Completo" />
+        <input type="text" placeholder="Nome Completo" name="nome"/>
     </div>
     <div class="input-field">
         <i class="fas fa-envelope"></i>
-        <input type="email" placeholder="Email" />
+        <input type="email" placeholder="Email" name="email"/>
     </div>
     <div class="input-field">
         <i class="fas fa-phone"></i>
-        <input type="number" placeholder="Telefone (+244)" />
+        <input type="number" placeholder="Telefone (+244)" name="telefone"/>
     </div>
 
     <div class="input-fild-doub">
         <div class="input-field">
             <i class="fas fa-location-dot"></i>
-            <input type="text" placeholder="Moradia" />
+            <input type="text" placeholder="Moradia" name="indereco"/>
         </div>
         <div class="input-field">
             <i class="fas fa-cake-candles"></i>
-            <input type="date" placeholder="Anivesário" />
+            <input type="date" placeholder="Anivesário" name="data_nascimento"/>
         </div>
     </div>
         
     <div class="input-field">
         <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Password" name="senha"/>
     </div>
     <div class="input-field">
         <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Confirmar Password" />
+        <input type="password" placeholder="Confirmar Password" name="senha_conf"/>
     </div>
     <input type="submit" class="btn form-submit" value="Sign up" />
     <p class="social-text">Ou cadastre-se usando</p>
